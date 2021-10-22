@@ -1,9 +1,6 @@
 package br.com.codezera.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
@@ -15,6 +12,7 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 @Table(name = "funcionario")
 public class Funcionario {
 
@@ -26,7 +24,7 @@ public class Funcionario {
 
     private String cpf;
 
-    private Date profissao;
+    private String profissao;
 
     private Double salario;
 
