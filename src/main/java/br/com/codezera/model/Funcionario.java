@@ -29,4 +29,5 @@ public class Funcionario {
     private Date profissao;
 
     private Double salario;
+
 }
