@@ -14,9 +14,10 @@ import javax.persistence.*;
 @ToString
 @Table(name = "funcionario")
 public class Funcionario {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+
     private Long id;
 
     @Column(unique = true)
