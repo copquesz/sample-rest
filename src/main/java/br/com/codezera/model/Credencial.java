@@ -1,11 +1,17 @@
 package br.com.codezera.model;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
-import java.util.Date;
-import java.util.List;
+
+/**
+ * @author Lucas Copque
+ * @since 30/10/2021
+ */
 
 @Entity
 @DynamicUpdate
@@ -13,21 +19,14 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
-@Table(name = "funcionario")
-public class Funcionario {
+@Table(name = "credencial")
+public class Credencial {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true)
-    private String nome;
+    private String user;
 
-    private String cpf;
-
-    private String profissao;
-
-    private Double salario;
+    private String password;
 }
-
