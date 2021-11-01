@@ -16,8 +16,6 @@ import javax.persistence.*;
 public class Funcionario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
-
     private Long id;
 
     @Column(unique = true)
@@ -28,5 +26,9 @@ public class Funcionario {
     private String profissao;
 
     private Double salario;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "credencial_id")
+    private Credencial credencial;
 }
 
