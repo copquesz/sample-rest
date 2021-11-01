@@ -1,5 +1,6 @@
 package br.com.codezera.model;
 
+import br.com.codezera.enumerated.TipoUsuario;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,6 +22,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Table(name = "credencial")
 public class Credencial {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -28,4 +30,7 @@ public class Credencial {
     private String user;
 
     private String password;
+
+    @Enumerated(EnumType.STRING)
+    private TipoUsuario tipo;
 }
