@@ -5,9 +5,6 @@ import br.com.codezera.service.FuncionarioService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,8 +12,6 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("funcionarios")
-@EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class FuncionarioController {
 
     private final FuncionarioService funcionarioService;
@@ -58,7 +53,6 @@ public class FuncionarioController {
     }
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("HasRole('ADMIN')")
     public ResponseEntity<Funcionario> deleteById(@PathVariable Long id) {
         Boolean status = this.funcionarioService.delete(id);
         if (status) {
